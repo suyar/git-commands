@@ -88,3 +88,8 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git tag <name> <commit>` _在指定的版本版本id打标签_  
 `git show <name>` _查看标签信息_  
 `git tag -a <name> -m "说明" <commit>` _创建带有说明的标签_  
+* 操作标签  
+`git tag -d <name>` _删除标签_  
+`git push origin <name>` _推送某个标签到远程仓库_  
+`git push origin --tags` _一次性推送全部尚未推送到远程的本地标签_  
+`git push origin :refs/tags/<name>` _删除远程标签(删除远程标签之前要先删除本地标签)_  
