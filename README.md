@@ -1,2 +1,58 @@
-# git-commands
-记录一些git命令
+# Git Commands
+> ### 开始使用git  
+
+* 设置用户名  
+`git config --global user.name "Your Name"`  
+* 设置邮箱  
+`git config --global user.email "email@example.com"`  
+* 创建仓库（当前目录）  
+`git init`  
+* 添加文件  
+`git add <file>` _添加指定文件_  
+`git add .` _添加所有改变的文件_  
+_注：如果add后又修改了文件，还要再add一次之后再commit_  
+* 提交  
+`git commit -m "提交说明"`  
+* 查看状态  
+`git status`  
+* 查看修改  
+`git diff <file>` _查看单个文件的更改_  
+`git diff` _查看所有文件的更改_  
+* 查看历史提交  
+`git log`  
+`git log --pretty=oneline` _一次提交显示为一行_  
+`git blame <file>` _查看一个文件的修改记录(谁在什么事件修改了什么)_  
+* 查看历史命令  
+`git reflog`
+
+> ### 版本控制  
+
+* 版本回退  
+`git reset --hard HEAD` _撤销所有未提交的操作，包括add_  
+`git reset --hard HEAD^` _回退到上一个版本_  
+`git reset --hard HEAD^^` _回退到上两个版本_  
+`git reset --hard HEAD~100` _回退到上100个版本_  
+`git reset --hard <commit>` _回退到指定版本_  
+`git checkout -- <file>` _丢弃工作区的修改，如果文件add到了暂存区又做了修改，则恢复到暂存区，否则恢复到版本库的状态，如果文件删除了，则回复到版本库的文件_  
+`git reset HEAD <file>` _把暂存区的修改撤销掉，重新放回工作区_  
+_注：_  
+_场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令 `git checkout -- <file>`_  
+_场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令 `git reset HEAD <file>`，就回到了场景1，第二步按场景1操作_  
+_场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退，不过前提是没有推送到远程库_  
+* 删除/重命名  
+`git rm <file>` _删除文件，尽管文件已经添加到暂存区(add)_  
+`git rm --cached <file>` _把文件从版本库、暂存区删掉，但是保留硬盘文件_  
+`git mv <file> <other file>` _重命名文件_  
+
+> ### 远程仓库  
+
+* 创建ssh密钥  
+`ssh-keygen -t rsa -C "youremail@example.com"`  
+_注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人，复制内容，在github上添加_  
+* 远程仓库  
+`git remote add origin git@github.com:michaelliao/learngit.git` _关联远程仓库,远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库_  
+`git push -u origin master` _我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令_  
+`git push origin master` _把本地master分支的最新修改推送至GitHub_  
+`git clone git@github.com:michaelliao/gitskills.git` _从远程仓库克隆_  
+
+
