@@ -60,6 +60,7 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git pull` _从远程库拉取_  
 `git checkout -b <branch> origin/<branch>` _创建远程origin的branch分支到本地_  
 `git branch --set-upstream <branch> origin/<branch>` _指定本地dev分支与远程origin/dev分支的链接_  
+`git push origin --delete <branch>` _删除远程分支_  
 
 > ### 分支管理  
 
