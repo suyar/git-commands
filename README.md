@@ -53,6 +53,19 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git remote add origin git@github.com:michaelliao/learngit.git` _关联远程仓库,远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库_  
 `git push -u origin master` _我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令_  
 `git push origin master` _把本地master分支的最新修改推送至GitHub_  
-`git clone git@github.com:michaelliao/gitskills.git` _从远程仓库克隆_  
+`git clone git@github.com:michaelliao/gitskills.git` _从远程仓库克隆，Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin_  
+`git remote` _查看远程库的信息_  
+`git remote -v` _查看远程库的详细信息_  
+`git push origin master` _推送远程分支，就是把该分支上的所有本地提交推送到远程库_  
+`git pull` _从远程库拉取_  
+
+> ### 分支管理  
+* 创建分支  
+`git checkout -b <branch>` _创建分支并切换过去，相当于执行了 `git branch <branch>` 和 `git checkout <branch>`_  
+`git branch` _查看当前分支_  
+`git checkout <branch>` _切换分支_  
+`git merge <branch>` _合并分支到当前分支，有冲突修改后再add、commit_  
+`git merge --no-ff -m "合并信息" <branch>` _禁止快速合并_  
+`git branch -d <branch>` _删除分支_  
 
 
