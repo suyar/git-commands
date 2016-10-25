@@ -79,5 +79,11 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git stash pop` _恢复并删除stash_  
 `git stash apply stash@{0}` _多次stash，恢复指定的stash_  
 
+> ### 标签管理  
 
-
+* 创建标签  
+`git tag <name>` _创建标签_  
+`git tag` _查看所有标签_  
+`git tag <name> <commit>` _在指定的版本版本id打标签_  
+`git show <name>` _查看标签信息_  
+`git tag -a <name> -m "说明" <commit>` _创建带有说明的标签_  
