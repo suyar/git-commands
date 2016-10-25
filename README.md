@@ -60,6 +60,7 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git pull` _从远程库拉取_  
 
 > ### 分支管理  
+
 * 创建分支  
 `git checkout -b <branch>` _创建分支并切换过去，相当于执行了 `git branch <branch>` 和 `git checkout <branch>`_  
 `git branch` _查看当前分支_  
