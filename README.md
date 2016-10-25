@@ -58,6 +58,8 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git remote -v` _查看远程库的详细信息_  
 `git push origin master` _推送远程分支，就是把该分支上的所有本地提交推送到远程库_  
 `git pull` _从远程库拉取_  
+`git checkout -b <branch> origin/<branch>` _创建远程origin的branch分支到本地_  
+`git branch --set-upstream <branch> origin/<branch>` _指定本地dev分支与远程origin/dev分支的链接_  
 
 > ### 分支管理  
 
@@ -68,5 +70,14 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git merge <branch>` _合并分支到当前分支，有冲突修改后再add、commit_  
 `git merge --no-ff -m "合并信息" <branch>` _禁止快速合并_  
 `git branch -d <branch>` _删除分支_  
+`git branch -D <branch>` _强行删除分支(未合并的分支)_  
+* BUG分支  
+`git stash` _把当前工作现场“储藏”起来，等以后恢复现场后继续工作_  
+`git stash list` _查看stash_  
+`git stash apply` _恢复现场_  
+`git stash drop` _删除保存的stash_  
+`git stash pop` _恢复并删除stash_  
+`git stash apply stash@{0}` _多次stash，恢复指定的stash_  
+
 
 
