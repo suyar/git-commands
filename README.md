@@ -93,3 +93,7 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 `git push origin <name>` _推送某个标签到远程仓库_  
 `git push origin --tags` _一次性推送全部尚未推送到远程的本地标签_  
 `git push origin :refs/tags/<name>` _删除远程标签(删除远程标签之前要先删除本地标签)_  
+
+> ### 导出
+
+`git archive -o /d/www/update.zip HEAD $(git diff HEAD HEAD^ --name-only)` _导出和上个版本差异的文件_
