@@ -97,3 +97,5 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 > ### 导出
 
 `git archive -o /d/www/update.zip HEAD $(git diff HEAD HEAD^ --name-only)` _导出和上个版本差异的文件_
+`git archive -o /d/update/project.zip master -0` _导出纯净项目源码_
+`git config core.quotepath false` _如果导出的文件有中文显示成Unicode导致导出失败，配置这个_
