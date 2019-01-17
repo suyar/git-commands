@@ -103,5 +103,5 @@ _注：一路回车，在用户主目录里找到.ssh目录，里面有id_rsa和
 > ### 其他配置
 
 `git config core.gitproxy=socks5://127.0.0.1:1080` _设置socket5代理_  
-`git config core.filemode=false` _忽略文件权限差异_  
+`git config core.filemode false` _忽略文件权限差异_  
 
